@@ -1,0 +1,492 @@
+/* styles.css */
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #e74c3c;
+    color: white;
+    position: fixed; /* Menjaga header tetap di atas */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Menambahkan margin pada konten utama agar tidak tertutup oleh header */
+body {
+    margin-top: 80px; /* Sesuaikan dengan tinggi header */
+}
+
+/* Header ketika di scroll */
+header.scrolled {
+    background-color: rgba(231, 76, 60, 0.8); /* Menambahkan transparansi */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Menambah bayangan sedikit lebih gelap */
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    width: 60px; /* Ukuran logo */
+    height: 60px;
+    border-radius: 10px; /* Sudut membulat */
+    margin-right: 15px; /* Jarak antara logo dan teks */
+}
+
+header .logo h1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+/* Hero Section */
+.hero {
+    position: relative; /* Untuk overlay */
+    background-image: url('Brosur Cebak Mercon.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Warna overlay gelap */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative; /* Supaya tidak tertutupi overlay */
+    z-index: 2;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay pada konten */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.hero .cta-button {
+    background-color: #f39c12;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hero .cta-button:hover {
+    background-color: #d35400;
+}
+
+/* Menu Section */
+#menu {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.menu-image img {
+    width: 80%; /* Menentukan ukuran gambar agar responsif */
+    max-width: 600px; /* Batas maksimal lebar gambar */
+    height: auto; /* Mempertahankan rasio gambar */
+    border-radius: 10px; /* Sudut membulat untuk estetika */
+    margin-bottom: 20px; /* Jarak antara gambar dan tombol */
+}
+
+/* Menu Section */
+#menu {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.menu-image img {
+    width: 60%; /* Dikurangi dari 80% menjadi 60% */
+    max-width: 400px; /* Batas maksimal lebar dikurangi dari 600px menjadi 400px */
+    height: auto; /* Mempertahankan rasio gambar */
+    border-radius: 10px; /* Sudut membulat untuk estetika */
+    margin-bottom: 20px; /* Jarak antara gambar dan tombol */
+}
+
+#menu .cta-button {
+    background-color: #e74c3c;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: inline-block; /* Supaya tombol tetap terlihat dengan baik */
+}
+
+#menu .cta-button:hover {
+    background-color: #c0392b;
+}
+
+/* About Section */
+#about {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contact h2 {
+    font-size: 2.8em;
+    margin-bottom: 30px;
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+#contact p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    color: #555;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+form input, form textarea {
+    width: 80%;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1.1em;
+    transition: border-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form input:focus, form textarea:focus {
+    border-color: #e74c3c;
+    outline: none;
+}
+
+form textarea {
+    height: 180px;  /* Diperbesar sedikit */
+    resize: vertical;
+}
+
+form button {
+    background-color: #f39c12;
+    color: white;
+    padding: 15px 40px;
+    font-size: 1.3em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+form button:hover {
+    background-color: #e67e22;
+    transform: scale(1.05);
+}
+
+form button:active {
+    background-color: #d35400;
+    transform: scale(1);
+}
+
+/* Social Media Icon */
+.social-media {
+    margin-top: 20px;
+}
+
+.social-media a i {
+    font-size: 40px;  /* Ukuran ikon Instagram */
+    color: #cb0781;   /* Warna khas Instagram */
+    transition: transform 0.3s ease;  /* Efek transisi saat hover */
+}
+
+.social-media a:hover i {
+    transform: scale(1.2);  /* Efek zoom saat di-hover */
+}
+
+
+.social-logo {
+    width: 50px;  /* Ukuran logo Instagram */
+    height: 50px;
+    border-radius: 50%;  /* Agar logo berbentuk bulat */
+    transition: transform 0.3s ease;  /* Efek transisi saat hover */
+}
+
+.social-logo:hover {
+    transform: scale(1.1);  /* Efek zoom saat di-hover */
+}
+
+/* Promo Section */
+.promo-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.promo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.promo-content {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.promo-item {
+    width: 45%; /* Ukuran gambar brosur dan poster */
+    text-align: center;
+}
+
+.promo-image {
+    width: 100%; /* Membuat gambar responsif */
+    height: 500px;
+    border-radius: 10px; /* Sudut membulat */
+    margin-bottom: 15px;
+}
+
+.promo-item p {
+    font-size: 1.1em;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Menu Section */
+.menu-section {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.menu-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.menu-item {
+    width: 200px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.menu-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.menu-item:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* Menu Section */
+.menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.menu-item {
+    width: 200px;
+    position: relative; /* Untuk posisi elemen dalam menu-item */
+    text-align: center;
+}
+
+.menu-content {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Tinggi untuk kontainer menu */
+    overflow: hidden; /* Menjaga gambar tetap dalam batas */
+}
+
+.cta-button {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: opacity 0.3s ease; /* Efek transisi untuk tombol */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Pastikan tombol berada di atas */
+}
+
+.menu-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Agar gambar tetap proporsional */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* Awalnya gambar tidak terlihat */
+    z-index: 1; /* Gambar berada di bawah tombol */
+    transition: opacity 0.3s ease; /* Efek transisi untuk gambar */
+}
+
+.menu-content:hover .cta-button {
+    opacity: 0; /* Tombol menghilang saat di-hover */
+}
+
+.menu-content:hover .menu-image {
+    opacity: 1; /* Gambar muncul saat di-hover */
+}
+
+
+/* Menu Detail Section */
+#menu-detail {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.menu-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.menu-detail-container h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+.menu-detail-container .menu-detail-image {
+    width: 85%; /* Ukuran gambar responsif */
+    max-width: 155px; /* Batas maksimal gambar */
+    height: auto;
+    border-radius: 10px; /* Sudut membulat */
+    margin-bottom: 20px;
+}
+
+.menu-detail-container .menu-detail-description {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.menu-detail-container .cta-button {
+    background-color: #f39c12;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.menu-detail-container .cta-button:hover {
+    background-color: #d35400;
+    transform: scale(1.05);
+}
+
+.menu-detail-container .cta-button:active {
+    background-color: #e67e22;
+    transform: scale(1);
+}
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
